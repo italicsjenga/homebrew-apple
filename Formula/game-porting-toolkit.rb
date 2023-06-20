@@ -92,6 +92,7 @@ class GamePortingToolkit < Formula
     ENV["MACOSX_DEPLOYMENT_TARGET"] = "10.14"
 
     wine_configure_options = ["--prefix=#{prefix}",
+                              "--with-sdl2",
                               "--disable-win16",
                               "--disable-tests",
                               "--without-x",
@@ -105,11 +106,13 @@ class GamePortingToolkit < Formula
                               "--without-krb5"]
 
     wine64_configure_options = ["--enable-win64",
+                                "--with-sdl2",
                                 "--with-gnutls",
                                 "--with-freetype",
                                 "--with-gstreamer"]
 
     wine32_configure_options = ["--enable-win32on64",
+                                "--with-sdl2",
                                 "--with-wine64=../wine64-build",
                                 "--without-gstreamer",
                                 "--without-gphoto",
